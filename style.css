@@ -1,3 +1,4 @@
+
 body {
   font-family: 'Inter', sans-serif;
   margin: 0;
@@ -20,27 +21,31 @@ body {
   object-fit: cover;
   border-radius: 12px;
   display: block;
-  margin: 0 auto 20px auto;
+  margin-top: 40px;
 }
 .contact-icons {
   display: flex;
   justify-content: center;
   gap: 12px;
-  margin-bottom: 20px;
+  margin: 10px 0 20px 0;
 }
 .icon {
   width: 24px;
   height: 24px;
 }
 .news {
-  max-height: 160px;
-  overflow-y: auto;
-  background: #f0f0f0;
-  border-radius: 8px;
-  padding: 10px;
+  background: linear-gradient(to bottom, #ffffff, #f2f2f2);
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+.news h3 {
+  font-size: 16px;
+  margin-bottom: 10px;
 }
 .news ul {
-  padding-left: 18px;
+  list-style-type: disc;
+  padding-left: 20px;
   font-size: 14px;
 }
 .main-content {
@@ -56,9 +61,6 @@ h2 {
   font-weight: normal;
   margin-top: 0;
   margin-bottom: 20px;
-}
-p, li {
-  font-size: 16px;
 }
 .pub {
   display: flex;
@@ -81,4 +83,8 @@ p, li {
   font-size: 14px;
   color: #555;
   margin: 10px 0;
+}
+.highlight-author {
+  color: #007BFF;
+  font-weight: bold;
 }
