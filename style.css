@@ -88,3 +88,27 @@ h2 {
   color: #007BFF;
   font-weight: bold;
 }
+.pub-title {
+  font-size: 17px;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #111;
+}
+
+.pub-authors {
+  font-size: 15px;
+  margin-bottom: 4px;
+}
+
+.pub-abstract summary {
+  cursor: pointer;
+  font-weight: 500;
+  margin-top: 8px;
+  margin-bottom: 4px;
+}
+
+.pub-abstract p {
+  margin: 4px 0 0;
+  font-size: 14px;
+  line-height: 1.6;
+}
