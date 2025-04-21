@@ -1,0 +1,53 @@
+body {
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  background: #f9f9f9;
+  color: #222;
+}
+.container {
+  display: flex;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.sidebar {
+  width: 280px;
+  padding: 20px;
+  background: #fff;
+  border-right: 1px solid #ddd;
+}
+.profile-img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+.contact-icons img {
+  width: 24px;
+  margin-right: 8px;
+}
+.news {
+  margin-top: 30px;
+}
+.news ul {
+  padding-left: 20px;
+}
+.main-content {
+  flex: 1;
+  padding: 40px;
+}
+h1 {
+  font-size: 2em;
+  margin-bottom: 0;
+}
+h2 {
+  font-weight: 300;
+  margin-top: 0;
+}
+section {
+  margin-top: 40px;
+}
+.pub {
+  background: #fff;
+  padding: 15px;
+  margin-bottom: 10px;
+  border-left: 4px solid #333;
+}
