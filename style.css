@@ -18,27 +18,6 @@ img {
   height: auto;
 }
 
-/* === Top Navigation === */
-.topnav {
-  background-color: #fff;
-  overflow: hidden;
-  border-bottom: 1px solid #ccc;
-  padding: 12px 24px;
-}
-.topnav a {
-  float: left;
-  color: #333;
-  text-align: center;
-  padding: 12px;
-  text-decoration: none;
-  font-size: 16px;
-  font-weight: bold;
-}
-.topnav a:hover {
-  background-color: #f0f0f0;
-  color: black;
-}
-
 /* === Layout Wrapper === */
 .layout {
   display: flex;
@@ -57,8 +36,10 @@ img {
 }
 .profile-img {
   width: 200px;
+  aspect-ratio: 1 / 1;
   border-radius: 16px;
   object-fit: cover;
+  display: block;
 }
 .social-section {
   display: flex;
@@ -146,7 +127,25 @@ img {
   padding-right: 6px;
 }
 
+/* highlight author name */
+.highlight-author {
+  color: #007BFF;
+}
+
 /* === Responsive Layout === */
+@media (max-width: 1024px) {
+  .layout {
+    padding: 30px 40px;
+    gap: 30px;
+  }
+  .sidebar {
+    width: 220px;
+  }
+  .profile-img {
+    width: 180px;
+  }
+}
+
 @media (max-width: 768px) {
   .layout {
     flex-direction: column;
@@ -157,15 +156,34 @@ img {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
+    gap: 16px;
+  }
+  .profile-img {
+    width: 160px;
+    margin-bottom: 10px;
+  }
+  .news-section {
+    width: 100%;
+    order: 3;
+  }
+  .social-section {
+    order: 2;
   }
   .main-content {
     width: 100%;
   }
+}
+
+@media (max-width: 576px) {
   .pub {
     flex-direction: column;
   }
   .pub-img {
     width: 100%;
     height: auto;
+    max-height: 200px;
+  }
+  .profile-img {
+    width: 140px;
   }
 }
