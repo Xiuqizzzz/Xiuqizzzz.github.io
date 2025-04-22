@@ -269,4 +269,93 @@ img {
   .profile-img {
     width: 140px;
   }
+  /* === CV Download Page Styles === */
+.cv-download-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 200px);
+}
+
+.cv-card {
+  background-color: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+  padding: 50px;
+  text-align: center;
+  width: 100%;
+  max-width: 500px;
+}
+
+.cv-icon {
+  font-size: 60px;
+  margin-bottom: 20px;
+}
+
+.cv-card h1 {
+  font-size: 28px;
+  margin-bottom: 16px;
+}
+
+.cv-card p {
+  color: #666;
+  margin-bottom: 30px;
+}
+
+.download-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background-color: #007BFF;
+  color: white;
+  padding: 14px 30px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.download-button:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px);
+  text-decoration: none;
+  box-shadow: 0 6px 16px rgba(0,123,255,0.2);
+}
+
+.download-button:active {
+  transform: translateY(0);
+}
+
+.download-text {
+  font-weight: 500;
+}
+
+.download-icon {
+  font-size: 18px;
+}
+
+/* 添加一个悬停效果 */
+.cv-card {
+  transition: transform 0.3s ease;
+}
+
+.cv-card:hover {
+  transform: translateY(-5px);
+}
+
+/* 响应式调整 */
+@media (max-width: 576px) {
+  .cv-card {
+    padding: 30px 20px;
+  }
+  
+  .cv-icon {
+    font-size: 50px;
+  }
+  
+  .download-button {
+    width: 100%;
+  }
+}
 }
