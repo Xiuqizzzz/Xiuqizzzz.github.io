@@ -144,6 +144,7 @@ img {
 .main-content section {
   margin-bottom: 40px;
 }
+/* 调整论文图片垂直居中 */
 .pub {
   display: flex;
   gap: 20px;
@@ -152,17 +153,24 @@ img {
   background-color: #fff;
   border-radius: 12px;
   box-shadow: 0 4px 16px rgba(0,0,0,0.05);
-  align-items: flex-start;
+  align-items: center; /* 更改为center使图片垂直居中 */
 }
+
 .pub-img {
   width: 200px;
   height: 140px;
   object-fit: cover;
   border-radius: 12px;
   flex-shrink: 0;
+  align-self: center; /* 确保图片在flex容器中居中 */
 }
+
+/* 确保文本内容顶部对齐 */
 .pub-text {
   flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* 文本内容垂直居中 */
 }
 .pub-title {
   font-size: 17px;
