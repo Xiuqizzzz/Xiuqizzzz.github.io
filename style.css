@@ -71,11 +71,14 @@ h2 {
   border-radius: 10px;
 }
 .pub-img {
-  width: 240px;
-  height: auto;
-  border-radius: 8px;
-  object-fit: cover;
+  width: 240px;              /* 固定宽度 */
+  height: auto;              /* 高度自动适应比例 */
+  max-height: 180px;         /* 限制最大高度 */
+  object-fit: cover;         /* 保持比例裁剪填满 */
+  border-radius: 12px;       /* 圆角 */
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1); /* 可选美化 */
 }
+
 .pub-text {
   flex: 1;
 }
