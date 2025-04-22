@@ -162,7 +162,7 @@ img {
   object-fit: cover;
   border-radius: 12px;
   flex-shrink: 0;
-  margin-top: 5px; /* 添加小的顶部边距，使图片与文本标题大致平行 */
+  margin-top: 20px; /* 添加小的顶部边距，使图片与文本标题大致平行 */
 }
 
 /* 文本内容顶部对齐 */
