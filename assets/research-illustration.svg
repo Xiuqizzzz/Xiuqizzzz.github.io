@@ -1,0 +1,143 @@
+<svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <!-- 背景 -->
+  <rect width="800" height="600" fill="#f0f7ff" rx="15" ry="15"/>
+  
+  <!-- 背景装饰元素 - 数据流和网络连接 -->
+  <g opacity="0.15">
+    <path d="M0,300 Q150,200 300,300 T600,300 T800,300" stroke="#0078d7" stroke-width="5" fill="none"/>
+    <path d="M0,330 Q200,230 400,330 T800,330" stroke="#107c41" stroke-width="3" fill="none"/>
+    <path d="M0,270 Q200,370 400,270 T800,270" stroke="#d83b01" stroke-width="3" fill="none"/>
+    
+    <!-- 数据点 -->
+    <circle cx="100" cy="285" r="3" fill="#0078d7"/>
+    <circle cx="150" cy="255" r="3" fill="#0078d7"/>
+    <circle cx="200" cy="315" r="3" fill="#0078d7"/>
+    <circle cx="250" cy="285" r="3" fill="#0078d7"/>
+    <circle cx="300" cy="255" r="3" fill="#0078d7"/>
+    <circle cx="350" cy="315" r="3" fill="#0078d7"/>
+    <circle cx="400" cy="285" r="3" fill="#0078d7"/>
+    <circle cx="450" cy="255" r="3" fill="#0078d7"/>
+    <circle cx="500" cy="315" r="3" fill="#0078d7"/>
+    <circle cx="550" cy="285" r="3" fill="#0078d7"/>
+    <circle cx="600" cy="255" r="3" fill="#0078d7"/>
+    <circle cx="650" cy="315" r="3" fill="#0078d7"/>
+    <circle cx="700" cy="285" r="3" fill="#0078d7"/>
+  </g>
+  
+  <!-- 学生（左侧） -->
+  <g transform="translate(200, 350)">
+    <!-- XR眼镜/头盔 -->
+    <rect x="-45" y="-70" width="90" height="45" rx="10" ry="10" fill="#555" stroke="#333" stroke-width="2"/>
+    <rect x="-40" y="-65" width="80" height="35" rx="5" ry="5" fill="#2196f3" opacity="0.7"/>
+    
+    <!-- 头部 -->
+    <circle cx="0" cy="-25" r="30" fill="#ffdbac"/>
+    
+    <!-- 身体 -->
+    <rect x="-30" y="5" width="60" height="90" rx="15" ry="15" fill="#a0d2eb"/>
+    
+    <!-- 手臂（触摸全息投影） -->
+    <path d="M30,30 Q60,60 80,70" stroke="#ffdbac" stroke-width="12" fill="none" stroke-linecap="round"/>
+    <circle cx="80" cy="70" r="6" fill="#ffdbac"/>
+  </g>
+  
+  <!-- 老师（右侧） -->
+  <g transform="translate(600, 350)">
+    <!-- XR眼镜/头盔 -->
+    <rect x="-45" y="-70" width="90" height="45" rx="10" ry="10" fill="#555" stroke="#333" stroke-width="2"/>
+    <rect x="-40" y="-65" width="80" height="35" rx="5" ry="5" fill="#2196f3" opacity="0.7"/>
+    
+    <!-- 头部 -->
+    <circle cx="0" cy="-25" r="30" fill="#f5d0c5"/>
+    
+    <!-- 身体 -->
+    <rect x="-30" y="5" width="60" height="90" rx="15" ry="15" fill="#ef9a9a"/>
+    
+    <!-- 手臂（指向全息投影） -->
+    <path d="M-30,30 Q-60,60 -80,90" stroke="#f5d0c5" stroke-width="12" fill="none" stroke-linecap="round"/>
+    <circle cx="-80" cy="90" r="6" fill="#f5d0c5"/>
+  </g>
+  
+  <!-- 中间全息图投影 -->
+  <g transform="translate(400, 250)">
+    <!-- 投影的基底圆环 -->
+    <ellipse cx="0" cy="180" rx="80" ry="20" fill="#0078d7" opacity="0.3"/>
+    
+    <!-- 全息投影的分子模型 -->
+    <g opacity="0.8">
+      <!-- 连接线 -->
+      <line x1="0" y1="0" x2="-40" y2="-40" stroke="#64b5f6" stroke-width="3"/>
+      <line x1="0" y1="0" x2="40" y2="-40" stroke="#64b5f6" stroke-width="3"/>
+      <line x1="0" y1="0" x2="0" y2="60" stroke="#64b5f6" stroke-width="3"/>
+      <line x1="0" y1="60" x2="-40" y2="100" stroke="#64b5f6" stroke-width="3"/>
+      <line x1="0" y1="60" x2="40" y2="100" stroke="#64b5f6" stroke-width="3"/>
+      
+      <!-- 原子/节点 -->
+      <circle cx="0" cy="0" r="15" fill="#0288d1"/>
+      <circle cx="-40" cy="-40" r="10" fill="#29b6f6"/>
+      <circle cx="40" cy="-40" r="10" fill="#29b6f6"/>
+      <circle cx="0" cy="60" r="15" fill="#0288d1"/>
+      <circle cx="-40" cy="100" r="10" fill="#29b6f6"/>
+      <circle cx="40" cy="100" r="10" fill="#29b6f6"/>
+    </g>
+    
+    <!-- AI数据标签和连接线 -->
+    <g opacity="0.9">
+      <line x1="-40" y1="-40" x2="-80" y2="-80" stroke="#64b5f6" stroke-width="1" stroke-dasharray="5,3"/>
+      <rect x="-130" y="-105" width="100" height="25" rx="5" ry="5" fill="#bbdefb" opacity="0.9"/>
+      <text x="-80" y="-88" font-family="Inter, sans-serif" font-size="10" text-anchor="middle" fill="#0d47a1">Molecular Structure</text>
+      
+      <line x1="40" y1="-40" x2="80" y2="-80" stroke="#64b5f6" stroke-width="1" stroke-dasharray="5,3"/>
+      <rect x="30" y="-105" width="100" height="25" rx="5" ry="5" fill="#bbdefb" opacity="0.9"/>
+      <text x="80" y="-88" font-family="Inter, sans-serif" font-size="10" text-anchor="middle" fill="#0d47a1">Bond Angle: 104.5°</text>
+      
+      <line x1="40" y1="100" x2="100" y2="120" stroke="#64b5f6" stroke-width="1" stroke-dasharray="5,3"/>
+      <rect x="60" y="125" width="80" height="25" rx="5" ry="5" fill="#bbdefb" opacity="0.9"/>
+      <text x="100" y="142" font-family="Inter, sans-serif" font-size="10" text-anchor="middle" fill="#0d47a1">Hydrogen</text>
+    </g>
+  </g>
+  
+  <!-- AI和MLLM元素 - 显示AI处理 -->
+  <g transform="translate(400, 80)">
+    <rect x="-150" y="-30" width="300" height="60" rx="30" ry="30" fill="#e3f2fd" stroke="#0078d7" stroke-width="2"/>
+    <text x="0" y="-5" font-family="Inter, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#0d47a1">Multimodal LLM Processing</text>
+    <text x="0" y="15" font-family="Inter, sans-serif" font-size="12" text-anchor="middle" fill="#0d47a1">Real-time environment understanding</text>
+    
+    <!-- 从AI到全息投影的连接线 -->
+    <path d="M0,30 L0,60" stroke="#0078d7" stroke-width="3" stroke-dasharray="5,5"/>
+    <path d="M-20,60 L20,60 L0,75 Z" fill="#0078d7"/>
+  </g>
+  
+  <!-- 个性化学习系统指示器 -->
+  <g transform="translate(150, 120)">
+    <rect x="-80" y="-25" width="160" height="50" rx="25" ry="25" fill="#e8f5e9" stroke="#107c41" stroke-width="2"/>
+    <text x="0" y="0" font-family="Inter, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#1b5e20">Student Analysis</text>
+    <text x="0" y="20" font-family="Inter, sans-serif" font-size="10" text-anchor="middle" fill="#1b5e20">Learning pace detected</text>
+    
+    <!-- 连接线到学生 -->
+    <path d="M30,25 Q60,80 50,140" stroke="#107c41" stroke-width="2" stroke-dasharray="4,2" fill="none"/>
+  </g>
+  
+  <!-- 教学策略系统 -->
+  <g transform="translate(650, 120)">
+    <rect x="-80" y="-25" width="160" height="50" rx="25" ry="25" fill="#ffebee" stroke="#d83b01" stroke-width="2"/>
+    <text x="0" y="0" font-family="Inter, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#b71c1c">Adaptive Instruction</text>
+    <text x="0" y="20" font-family="Inter, sans-serif" font-size="10" text-anchor="middle" fill="#b71c1c">Simulation-based learning</text>
+    
+    <!-- 连接线到老师 -->
+    <path d="M-30,25 Q-60,80 -50,140" stroke="#d83b01" stroke-width="2" stroke-dasharray="4,2" fill="none"/>
+  </g>
+  
+  <!-- 标题 - 提高位置 -->
+  <text x="400" y="30" font-family="Inter, sans-serif" font-size="24" font-weight="bold" text-anchor="middle" fill="#333">
+    AI-Enhanced XR Educational Experience
+  </text>
+  
+  <!-- 描述文本 - 移除1:1 -->
+  <text x="400" y="545" font-family="Inter, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#333">
+    Personalized XR Learning with Multimodal LLM Integration
+  </text>
+  <text x="400" y="570" font-family="Inter, sans-serif" font-size="14" text-anchor="middle" fill="#555">
+    Real-time environment understanding and adaptive simulation-based learning
+  </text>
+</svg>
