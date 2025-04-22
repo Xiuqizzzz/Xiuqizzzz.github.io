@@ -165,6 +165,59 @@ img {
   margin-top: 20px; /* 添加小的顶部边距，使图片与文本标题大致平行 */
 }
 
+/* 研究兴趣部分样式 */
+.research-container {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+  margin: 20px 0 40px 0;
+  align-items: center;
+}
+
+.research-text {
+  flex: 1;
+  min-width: 300px;
+}
+
+.research-image {
+  flex: 1;
+  min-width: 300px;
+  max-width: 500px;
+}
+
+.research-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.research-text ol {
+  padding-left: 20px;
+}
+
+.research-text li {
+  margin-bottom: 15px;
+  line-height: 1.6;
+}
+
+/* 响应式布局调整 */
+@media (max-width: 992px) {
+  .research-container {
+    flex-direction: column;
+  }
+  
+  .research-text, .research-image {
+    width: 100%;
+    max-width: 100%;
+  }
+  
+  .research-image {
+    margin-top: 20px;
+    order: 2; /* 在移动设备上图片显示在文本下方 */
+  }
+}
+
 /* 文本内容顶部对齐 */
 .pub-text {
   flex: 1;
