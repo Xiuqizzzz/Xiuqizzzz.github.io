@@ -9,12 +9,12 @@ body {
 
 /* Main layout container in vertical direction */
 .container {
-  display: flex;
-  flex-direction: column;
+  display: block;  /* 或者 flex-direction: column 也行 */
   max-width: 900px;
   margin: 0 auto;
   padding: 20px;
 }
+
 
 /* Sidebar: Centered at top */
 .sidebar {
