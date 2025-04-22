@@ -161,3 +161,53 @@ h2 {
   overflow-y: auto;
   padding-right: 6px;
 }
+
+
+/* Navigation bar styles */
+.topnav {
+    background-color: #fff;
+    overflow: hidden;
+    border-bottom: 1px solid #ccc;
+    padding: 12px 24px;
+}
+.topnav a {
+    float: left;
+    color: #333;
+    text-align: center;
+    padding: 12px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+}
+.topnav a:hover {
+    background-color: #f0f0f0;
+    color: black;
+}
+
+/* Layout container */
+.main-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 40px 80px;
+    gap: 40px;
+}
+
+/* Example for left side and right side if needed */
+.left-col {
+    width: 30%;
+}
+.right-col {
+    width: 65%;
+}
+
+/* Responsive fallback */
+@media (max-width: 768px) {
+    .main-container {
+        flex-direction: column;
+        padding: 20px;
+    }
+    .left-col, .right-col {
+        width: 100%;
+    }
+}
