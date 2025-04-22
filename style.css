@@ -8,9 +8,11 @@ body {
 
 .container {
   display: flex;
-  max-width: 1200px;
+  flex-direction: column;  /* ← 关键修改！从上往下排列 */
+  max-width: 900px;
   margin: 0 auto;
 }
+
 
 .sidebar {
   width: 280px;
