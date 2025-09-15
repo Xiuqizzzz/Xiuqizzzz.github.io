@@ -75,6 +75,51 @@ img {
   border-bottom: 3px solid #007BFF;
 }
 
+.news-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: .75rem;
+  margin-bottom: .25rem;
+}
+
+.news-toggle {
+  font: inherit;
+  padding: .35rem .6rem;
+  border: 1px solid #e3e3e3;
+  border-radius: 8px;
+  background: #fafafa;
+  cursor: pointer;
+}
+.news-toggle:hover { background: #f3f3f3; }
+
+.news-scroll {
+  overflow: hidden;           /* 折叠时隐藏 */
+  transition: max-height .25s ease;
+  max-height: 160px;          /* 折叠高度 */
+  padding-right: 4px;
+}
+
+.news-scroll[data-expanded="true"] {
+  overflow: auto;             /* 展开后可滚动 */
+  max-height: 420px;          /* 展开最大高度，可自行调 */
+}
+
+/* 可选：滚动条样式（与方案A一致） */
+.news-scroll::-webkit-scrollbar { width: 8px; }
+.news-scroll::-webkit-scrollbar-track { background: #f2f2f2; border-radius: 8px; }
+.news-scroll::-webkit-scrollbar-thumb { background: #c9c9c9; border-radius: 8px; }
+.news-scroll::-webkit-scrollbar-thumb:hover { background: #b3b3b3; }
+
+.news-section ul { list-style: none; margin: 0; padding-left: 0; }
+.news-section li { line-height: 1.5; margin: 0.35rem 0; }
+
+/* 轻微动效可关闭：尊重用户减少动效偏好 */
+@media (prefers-reduced-motion: reduce) {
+  .news-scroll { transition: none; }
+}
+
+
 .download-icon {
   font-size: 14px;
   margin-left: 4px;
