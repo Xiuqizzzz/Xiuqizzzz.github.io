@@ -45,6 +45,14 @@ img {
   font-weight: 600;
 }
 
+.news-section h3 { margin-bottom: 0.5rem; }
+.news-scroll {
+  max-height: 180px;   /* 需要显示更少/更多可调这里 */
+  overflow: auto;
+  padding-right: 4px;
+}
+
+
 .nav-logo a {
   color: #333;
   text-decoration: none;
