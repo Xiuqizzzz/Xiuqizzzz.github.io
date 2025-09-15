@@ -6,13 +6,16 @@ body {
   color: #222;
   line-height: 1.7;
 }
+
 a {
   color: #007BFF;
   text-decoration: none;
 }
+
 a:hover {
   text-decoration: underline;
 }
+
 img {
   max-width: 100%;
   height: auto;
@@ -36,7 +39,7 @@ img {
   margin: 0 auto;
 }
 
-/* 左侧标志 */
+/* Left logo */
 .nav-logo {
   font-size: 20px;
   font-weight: 600;
@@ -49,11 +52,11 @@ img {
   display: inline-block;
 }
 
-/* 中央导航链接 - 修改这部分 */
+/* Navigation links */
 .nav-links {
   display: flex;
   justify-content: center;
-  margin-left: auto; /* 推到右侧 */
+  margin-left: auto;
 }
 
 .nav-links a {
@@ -75,6 +78,72 @@ img {
   border-bottom: 3px solid #007BFF;
 }
 
+.download-icon {
+  font-size: 14px;
+  margin-left: 4px;
+}
+
+/* === Layout Wrapper === */
+.layout {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+  padding: 40px 60px;
+  max-width: 1200px;
+  margin: 0 auto;
+  align-items: flex-start;
+}
+
+/* === Sidebar (Left Column) === */
+.sidebar {
+  width: 260px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  padding-top: 50px;
+}
+
+.profile-img {
+  width: 200px;
+  aspect-ratio: 1 / 1;
+  border-radius: 16px;
+  object-fit: cover;
+  display: block;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  background: #e0e0e0; /* Placeholder background for missing image */
+}
+
+.social-section {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+  background: #ddd; /* Placeholder for missing icons */
+  border-radius: 4px;
+}
+
+/* === News Section === */
+.news-section {
+  background: #fff;
+  border-radius: 12px;
+  padding: 16px;
+  width: 100%;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.news-section h3 {
+  font-size: 16px;
+  margin-top: 0;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 6px;
+}
+
 .news-header {
   display: flex;
   align-items: center;
@@ -91,124 +160,109 @@ img {
   background: #fafafa;
   cursor: pointer;
 }
-.news-toggle:hover { background: #f3f3f3; }
+
+.news-toggle:hover {
+  background: #f3f3f3;
+}
 
 .news-scroll {
-  overflow: hidden;           /* 折叠时隐藏 */
+  overflow: hidden;
   transition: max-height .25s ease;
-  max-height: 160px;          /* 折叠高度 */
+  max-height: 160px;
   padding-right: 4px;
 }
 
 .news-scroll[data-expanded="true"] {
-  overflow: auto;             /* 展开后可滚动 */
-  max-height: 420px;          /* 展开最大高度，可自行调 */
+  overflow: auto;
+  max-height: 420px;
 }
 
-/* 可选：滚动条样式（与方案A一致） */
-.news-scroll::-webkit-scrollbar { width: 8px; }
-.news-scroll::-webkit-scrollbar-track { background: #f2f2f2; border-radius: 8px; }
-.news-scroll::-webkit-scrollbar-thumb { background: #c9c9c9; border-radius: 8px; }
-.news-scroll::-webkit-scrollbar-thumb:hover { background: #b3b3b3; }
-
-.news-section ul { list-style: none; margin: 0; padding-left: 0; }
-.news-section li { line-height: 1.5; margin: 0.35rem 0; }
-
-/* 轻微动效可关闭：尊重用户减少动效偏好 */
-@media (prefers-reduced-motion: reduce) {
-  .news-scroll { transition: none; }
+/* Custom scrollbar styles */
+.news-scroll::-webkit-scrollbar {
+  width: 8px;
 }
 
-
-.download-icon {
-  font-size: 14px;
-  margin-left: 4px;
+.news-scroll::-webkit-scrollbar-track {
+  background: #f2f2f2;
+  border-radius: 8px;
 }
 
-/* === Layout Wrapper === */
-.layout {
-  display: flex;
-  flex-direction: row;
-  gap: 40px;
-  padding: 40px 60px;
-  max-width: 1200px;
-  margin: 0 auto;
-  align-items: flex-start; /* 确保从顶部开始对齐 */
+.news-scroll::-webkit-scrollbar-thumb {
+  background: #c9c9c9;
+  border-radius: 8px;
 }
 
-/* === Sidebar (Left Column) === */
-.sidebar {
-  width: 260px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 24px;
-  padding-top: 50px; /* 增加顶部内边距，让侧边栏整体内容向下移动 */
+.news-scroll::-webkit-scrollbar-thumb:hover {
+  background: #b3b3b3;
 }
-.profile-img {
-  width: 200px;
-  aspect-ratio: 1 / 1;
-  border-radius: 16px;
-  object-fit: cover;
-  display: block;
-  margin-top: 20px; /* 增加上边距，将头像往下移动 */
-  margin-bottom: 20px;
-}
-.social-section {
-  display: flex;
-  gap: 10px;
-  justify-content: center;
-}
-.icon {
-  width: 24px;
-  height: 24px;
-}
-.news-section {
-  background: #fff;
-  border-radius: 12px;
-  padding: 16px;
-  width: 100%;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-}
-.news-section h3 {
-  font-size: 16px;
-  margin-top: 0;
-  border-bottom: 1px solid #ccc;
-  padding-bottom: 6px;
-}
+
 .news-section ul {
   list-style: none;
+  margin: 0;
   padding-left: 0;
 }
+
 .news-section li {
   font-size: 14px;
-  margin-bottom: 8px;
+  line-height: 1.5;
+  margin: 0.35rem 0;
+}
+
+/* Respect user's reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .news-scroll {
+    transition: none;
+  }
 }
 
 /* === Main Content (Right Column) === */
 .main-content {
   flex: 1;
 }
+
 .main-content h1 {
   font-size: 28px;
   margin-bottom: 8px;
 }
+
 .main-content h2 {
   font-size: 18px;
   font-weight: normal;
   margin-top: 0;
   margin-bottom: 24px;
 }
+
 .main-content section {
   margin-bottom: 40px;
 }
 
-/* === 研究兴趣部分样式 - 修改为垂直布局 === */
+.main-content section h3 {
+  margin-top: 40px;
+  margin-bottom: 25px;
+  font-size: 22px;
+  color: #333;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 10px;
+}
+
+.main-content h4 {
+  font-size: 18px;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  color: #444;
+}
+
+.bio {
+  margin-bottom: 30px;
+  line-height: 1.7;
+}
+
+/* === Research Interests Section === */
 .research-container {
   display: flex;
-  flex-direction: column; /* 改为垂直排列 */
-  gap: 30px; /* 减小间距 */
-  margin: 30px 0 50px 0; /* 增加上下边距 */
+  flex-direction: column;
+  gap: 30px;
+  margin: 30px 0 50px 0;
   align-items: center;
 }
 
@@ -217,20 +271,6 @@ img {
   max-width: 100%;
 }
 
-.research-image {
-  width: 100%;
-  max-width: 800px; /* 控制图片最大宽度 */
-  margin: 0 auto; /* 居中显示 */
-}
-
-.research-image img {
-  width: 100%;
-  height: auto;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-}
-
-/* 调整段落和列表的间距 */
 .research-text p {
   margin-bottom: 20px;
 }
@@ -242,26 +282,29 @@ img {
 }
 
 .research-text li {
-  margin-bottom: 20px; /* 增加列表项间距 */
+  margin-bottom: 20px;
   line-height: 1.6;
 }
 
-/* 为标题添加更多空间 */
-.main-content section h3 {
-  margin-top: 40px;
-  margin-bottom: 25px;
-  font-size: 22px;
-  color: #333;
-  border-bottom: 2px solid #eee;
-  padding-bottom: 10px;
+.research-image {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
-/* 为Publications标题添加更多空间 */
+.research-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  background: #f0f0f0; /* Placeholder background */
+}
+
+/* === Publications Section === */
 #publications {
-  margin-top: 50px; /* 与上方研究兴趣部分保持更多距离 */
+  margin-top: 50px;
 }
 
-/* === 论文展示部分 === */
 .pub {
   display: flex;
   gap: 20px;
@@ -270,7 +313,7 @@ img {
   background-color: #fff;
   border-radius: 12px;
   box-shadow: 0 4px 16px rgba(0,0,0,0.05);
-  align-items: flex-start; /* 改回顶部对齐 */
+  align-items: flex-start;
 }
 
 .pub-img {
@@ -279,7 +322,8 @@ img {
   object-fit: cover;
   border-radius: 12px;
   flex-shrink: 0;
-  margin-top: 20px; /* 添加小的顶部边距，使图片与文本标题大致平行 */
+  margin-top: 20px;
+  background: #e0e0e0; /* Placeholder background */
 }
 
 .pub-text {
@@ -291,25 +335,48 @@ img {
   font-weight: 600;
   margin-bottom: 6px;
   line-height: 1.3;
+  margin-top: 0;
 }
 
 .pub-authors {
   font-size: 15px;
   margin-bottom: 4px;
+  color: #555;
 }
 
 .pub-abstract {
   font-size: 14px;
   color: #555;
   margin: 10px 0;
-  max-height: 120px;
+  max-height: 160px;
   overflow-y: auto;
   padding-right: 6px;
+  line-height: 1.6;
 }
 
-/* highlight author name */
+/* Custom scrollbar for abstracts */
+.pub-abstract::-webkit-scrollbar {
+  width: 6px;
+}
+
+.pub-abstract::-webkit-scrollbar-track {
+  background: #f2f2f2;
+  border-radius: 3px;
+}
+
+.pub-abstract::-webkit-scrollbar-thumb {
+  background: #c9c9c9;
+  border-radius: 3px;
+}
+
+.pub-abstract::-webkit-scrollbar-thumb:hover {
+  background: #b3b3b3;
+}
+
+/* Highlight author name */
 .highlight-author {
   color: #007BFF;
+  font-weight: 600;
 }
 
 /* === CV Download Page Styles === */
@@ -440,7 +507,8 @@ img {
   margin-bottom: 30px;
 }
 
-.blog-archive h3, .blog-categories h3 {
+.blog-archive h3,
+.blog-categories h3 {
   font-size: 20px;
   margin-bottom: 15px;
 }
@@ -492,13 +560,16 @@ img {
   .nav-container {
     padding: 0 40px;
   }
+  
   .layout {
     padding: 30px 40px;
     gap: 30px;
   }
+  
   .sidebar {
     width: 220px;
   }
+  
   .profile-img {
     width: 180px;
   }
@@ -508,43 +579,53 @@ img {
   .nav-container {
     padding: 0 20px;
   }
+  
   .nav-links a {
     padding: 18px 10px;
   }
+  
   .layout {
     flex-direction: column;
     padding: 20px;
   }
+  
   .sidebar {
     width: 100%;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
     gap: 16px;
-    padding-top: 0; /* 在移动设备上取消顶部内边距 */
+    padding-top: 0;
   }
+  
   .profile-img {
     width: 160px;
-    margin-top: 0; /* 在移动设备上减少上边距 */
+    margin-top: 0;
     margin-bottom: 10px;
   }
+  
   .news-section {
     width: 100%;
     order: 3;
   }
+  
   .social-section {
     order: 2;
   }
+  
   .main-content {
     width: 100%;
   }
+  
   .research-image {
-    max-width: 100%; /* 在移动设备上全宽显示 */
+    max-width: 100%;
   }
+  
   .post-meta {
     flex-direction: column;
     gap: 5px;
   }
+  
   .post-featured-img img {
     height: 250px;
   }
@@ -555,47 +636,54 @@ img {
     flex-direction: column;
     padding: 0;
   }
+  
   .nav-logo {
     width: 100%;
     text-align: center;
     border-bottom: 1px solid #eee;
   }
+  
   .nav-links {
     width: 100%;
     justify-content: space-around;
-    margin-left: 0; /* 在小屏幕上重置边距 */
+    margin-left: 0;
   }
+  
   .nav-links a {
     flex: 1;
     text-align: center;
     padding: 15px 5px;
     font-size: 14px;
   }
+  
   .pub {
     flex-direction: column;
   }
+  
   .pub-img {
     width: 100%;
     height: auto;
     max-height: 200px;
-    margin-top: 0; /* 调整图片在垂直排列时的边距 */
+    margin-top: 0;
   }
+  
   .profile-img {
     width: 140px;
   }
+  
   .cv-card {
     padding: 30px 20px;
   }
+  
   .cv-icon {
     font-size: 50px;
   }
+  
   .download-button {
     width: 100%;
   }
+  
   .post-featured-img img {
     height: 200px;
-  }
-  .skills-grid {
-    grid-template-columns: 1fr;
   }
 }
