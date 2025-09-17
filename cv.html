@@ -6,6 +6,99 @@
   <title>CV - Tommy (Xiuqi) Zhu</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
+  <style>
+    .cv-container {
+      display: flex;
+      gap: 2rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 2rem;
+    }
+    
+    .cv-card {
+      background: white;
+      border-radius: 12px;
+      padding: 2.5rem;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      max-width: 350px;
+      flex: 1;
+      min-width: 280px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .cv-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+    }
+    
+    .cv-icon {
+      font-size: 4rem;
+      margin-bottom: 1rem;
+    }
+    
+    .cv-card h2 {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+      color: #333;
+    }
+    
+    .cv-card p {
+      color: #666;
+      margin-bottom: 1.5rem;
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+    
+    .download-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.5rem;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+    
+    .download-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+    }
+    
+    .download-icon {
+      font-size: 1.2rem;
+    }
+    
+    .page-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    
+    .page-header h1 {
+      font-size: 2.5rem;
+      color: #333;
+      margin-bottom: 0.5rem;
+    }
+    
+    .page-header p {
+      color: #666;
+      font-size: 1.1rem;
+    }
+    
+    @media (max-width: 768px) {
+      .cv-container {
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .cv-card {
+        max-width: 100%;
+      }
+    }
+  </style>
 </head>
 <body>
   <!-- 导航栏 -->
@@ -16,22 +109,41 @@
       </div>
       <div class="nav-links">
         <a href="index.html">About</a>
-        <a href="cv.html" class="active">CV <span class="download-icon">📄</span></a>
+        <a href="cv.html" class="active">CV</a>
         <a href="blog.html">Blog</a>
       </div>
     </div>
   </nav>
-
+  
   <div class="layout">
     <div class="main-content cv-download-page">
-      <div class="cv-card">
-        <div class="cv-icon">📄</div>
+      <div class="page-header">
         <h1>Curriculum Vitae</h1>
-        <p>Click the button below to download my complete CV</p>
-        <a href="CV_Tommy_Zhu.pdf" class="download-button" download>
-          <span class="download-text">Download CV</span>
-          <span class="download-icon">📥</span>
-        </a>
+        <p>Download my CV in the format that best suits your needs</p>
+      </div>
+      
+      <div class="cv-container">
+        <!-- Professional CV Card -->
+        <div class="cv-card">
+          <div class="cv-icon">💼</div>
+          <h2>Professional CV</h2>
+          <p>A concise overview of my professional experience, skills, and achievements tailored for industry positions</p>
+          <a href="CV_Tommy_Zhu.pdf" class="download-button" download>
+            <span class="download-text">Download CV</span>
+            <span class="download-icon">📥</span>
+          </a>
+        </div>
+        
+        <!-- Academic CV Card -->
+        <div class="cv-card">
+          <div class="cv-icon">🎓</div>
+          <h2>Academic CV</h2>
+          <p>Comprehensive academic background including publications, research experience, and teaching activities</p>
+          <a href="Academic_CV_Tommy_Zhu.pdf" class="download-button" download>
+            <span class="download-text">Download Academic CV</span>
+            <span class="download-icon">📥</span>
+          </a>
+        </div>
       </div>
     </div>
   </div>
