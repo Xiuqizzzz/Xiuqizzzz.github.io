@@ -17,6 +17,7 @@
         <a href="index.html">About</a>
         <a href="cv.html">CV <span class="download-icon">📄</span></a>
         <a href="blog.html" class="active">Blog</a>
+        <a href="javascript:void(0)" onclick="toggleLanguage()" id="lang-btn">中文</a>
       </div>
     </div>
   </nav>
@@ -26,25 +27,58 @@
       <p><a href="blog.html">← Back to Blog</a></p>
       
       <article>
-        <h1>Right in the middle of PhD grind</h1>
-        <p class="date">November 29, 2025</p>
-        
-        <p>The grind is real. I’m writing this while my PCR runs for the third time today. It’s a strange feeling, being right in the middle of it all.</p>
-        
-        <h3>The Reality of "The Middle"</h3>
-        <p>
-          (Write your story here! You can talk about the late nights, the specific challenges you are facing, or the small wins that keep you going.)
-        </p>
+        <div id="content-en">
+            <h1>Right in the middle of PhD grind</h1>
+            <p class="date">November 29, 2025</p>
+            <p>The grind is real. I’m writing this while my PCR runs for the third time today. It’s a strange feeling, being right in the middle of it all.</p>
+            
+            <h3>The Reality of "The Middle"</h3>
+            <p>
+              (Write your story here! You can talk about the late nights, the specific challenges you are facing, or the small wins that keep you going.)
+            </p>
 
-        <h3>What keeps me going</h3>
-        <p>
-          (Add more paragraphs like this. Just wrap your text in <p> tags.)
-        </p>
+            <h3>What keeps me going</h3>
+            <p>
+              (Add more paragraphs like this. Just wrap your text in <p> tags.)
+            </p>
+        </div>
+
+        <div id="content-cn" style="display: none;">
+            <h1>博士生涯的中期磨砺</h1>
+            <p class="date">2025年11月29日</p>
+            <p>这种折磨是真实的。这是我今天第三次跑 PCR...</p>
+            
+            <h3>身处“中间”的现实</h3>
+            <p>(在这里写你的中文故事...)</p>
+
+            <h3>是什么支撑着我</h3>
+            <p>(在这里添加更多段落...)</p>
+        </div>
       </article>
 
       <hr>
       <p>Thanks for reading. If you are also in the grind, keep pushing.</p>
     </div>
   </div>
+
+  <script>
+    function toggleLanguage() {
+      var en = document.getElementById("content-en");
+      var cn = document.getElementById("content-cn");
+      var btn = document.getElementById("lang-btn");
+
+      if (en.style.display === "none") {
+        // 切换回英文
+        en.style.display = "block";
+        cn.style.display = "none";
+        btn.innerText = "中文";
+      } else {
+        // 切换到中文
+        en.style.display = "none";
+        cn.style.display = "block";
+        btn.innerText = "English";
+      }
+    }
+  </script>
 </body>
 </html>
