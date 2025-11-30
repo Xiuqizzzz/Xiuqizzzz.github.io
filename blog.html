@@ -6,6 +6,35 @@
   <title>Right In the middle of PhD grind - Tommy Zhu</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
+  
+  <style>
+    /* 让返回链接和按钮一行显示，并分居左右两侧 */
+    .content-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 2rem; /* 在文章标题前留点空隙 */
+    }
+    
+    /* 美化切换按钮 */
+    .lang-toggle-btn {
+        padding: 8px 16px;
+        background-color: transparent;
+        border: 1px solid #ccc;
+        border-radius: 20px;
+        cursor: pointer;
+        font-family: 'Inter', sans-serif;
+        font-size: 14px;
+        transition: all 0.2s ease;
+        color: #333;
+    }
+
+    /* 鼠标悬停时的效果 */
+    .lang-toggle-btn:hover {
+         background-color: #f5f5f5;
+         border-color: #999;
+    }
+  </style>
 </head>
 <body>
   <nav class="topnav">
@@ -17,15 +46,18 @@
         <a href="index.html">About</a>
         <a href="cv.html">CV <span class="download-icon">📄</span></a>
         <a href="blog.html" class="active">Blog</a>
-        <a href="javascript:void(0)" onclick="toggleLanguage()" id="lang-btn">中文</a>
       </div>
     </div>
   </nav>
 
   <div class="layout">
     <div class="main-content">
-      <p><a href="blog.html">← Back to Blog</a></p>
       
+      <div class="content-header">
+          <a href="blog.html" style="text-decoration: none; color: #666;">← Back to Blog</a>
+          <button onclick="toggleLanguage()" id="lang-btn" class="lang-toggle-btn">中文 / English</button>
+      </div>
+
       <article>
         <div id="content-en">
             <h1>Right in the middle of PhD grind</h1>
@@ -65,18 +97,21 @@
     function toggleLanguage() {
       var en = document.getElementById("content-en");
       var cn = document.getElementById("content-cn");
+      // 注意：这里获取的是新的 button 元素
       var btn = document.getElementById("lang-btn");
 
       if (en.style.display === "none") {
         // 切换回英文
         en.style.display = "block";
         cn.style.display = "none";
-        btn.innerText = "中文";
+        // 按钮文字提示可以切换到中文
+        btn.innerText = "中文 / English"; 
       } else {
         // 切换到中文
         en.style.display = "none";
         cn.style.display = "block";
-        btn.innerText = "English";
+        // 按钮文字提示可以切换回英文 (为了简洁，也可以只写 "English")
+        btn.innerText = "English / 中文";
       }
     }
   </script>
