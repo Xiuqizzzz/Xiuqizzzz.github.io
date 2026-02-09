@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects - Tommy (Xiuqi) Zhu</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .page-header {
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+
+    .page-header h1 {
+      font-size: 2.5rem;
+      color: #333;
+      margin-bottom: 0.5rem;
+    }
+
+    .page-header p {
+      color: #666;
+      font-size: 1.05rem;
+    }
+
+    .project-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .project-card {
+      background: white;
+      border-radius: 12px;
+      padding: 1.5rem;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.08);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 14px rgba(0, 0, 0, 0.12);
+    }
+
+    .project-card h3 {
+      margin: 0 0 0.5rem 0;
+      color: #333;
+    }
+
+    .project-card p {
+      color: #666;
+      line-height: 1.5;
+      margin: 0 0 1rem 0;
+    }
+
+    .project-tags {
+      font-size: 0.9rem;
+      color: #777;
+    }
+  </style>
+</head>
+<body>
+  <nav class="topnav">
+    <div class="nav-container">
+      <div class="nav-logo">
+        <a href="index.html">Tommy Zhu</a>
+      </div>
+      <div class="nav-links">
+        <a href="index.html">About</a>
+        <a href="cv.html">CV <span class="download-icon">📄</span></a>
+        <a href="project.html" class="active">Projects</a>
+        <a href="blog.html">Blog</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="layout">
+    <div class="main-content">
+      <div class="page-header">
+        <h1>Projects</h1>
+        <p>Selected research, design, and systems work.</p>
+      </div>
+
+      <section class="project-list">
+        <div class="project-card">
+          <h3>AI-Powered Smart Glasses for Collaboration</h3>
+          <p>Designing multimodal XR systems that assist real-time co-located collaboration without disrupting natural social cues.</p>
+          <div class="project-tags">XR · AI · HCI</div>
+        </div>
+
+        <div class="project-card">
+          <h3>VR Simulation for Clinical Communication</h3>
+          <p>Immersive, adaptive training environments with LLM-driven conversational agents for healthcare education.</p>
+          <div class="project-tags">VR · Education · LLMs</div>
+        </div>
+
+        <div class="project-card">
+          <h3>Accessible Tech for BLV Students</h3>
+          <p>Investigating inclusive learning technologies and system-level barriers in resource-constrained environments.</p>
+          <div class="project-tags">Accessibility · Education · Policy</div>
+        </div>
+      </section>
+    </div>
+  </div>
+</body>
+</html>
