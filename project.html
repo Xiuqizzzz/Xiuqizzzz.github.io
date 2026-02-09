@@ -7,6 +7,43 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
   <style>
+    body {
+      position: relative;
+      overflow-x: hidden;
+      background: radial-gradient(1200px 600px at 10% -10%, rgba(102, 126, 234, 0.18), transparent 60%),
+                  radial-gradient(900px 500px at 90% 10%, rgba(118, 75, 162, 0.16), transparent 55%),
+                  linear-gradient(180deg, #f7f8fb 0%, #f1f3f8 100%);
+    }
+
+    body::before,
+    body::after {
+      content: "";
+      position: fixed;
+      inset: -20% -10%;
+      z-index: 0;
+      pointer-events: none;
+      background: conic-gradient(from 180deg at 50% 50%, rgba(102, 126, 234, 0.08), rgba(118, 75, 162, 0.06), rgba(255, 255, 255, 0.0));
+      filter: blur(40px);
+      animation: swirl 28s linear infinite;
+      opacity: 0.9;
+    }
+
+    body::after {
+      animation: swirl 40s linear infinite reverse;
+      opacity: 0.6;
+    }
+
+    .layout,
+    .topnav {
+      position: relative;
+      z-index: 1;
+    }
+
+    @keyframes swirl {
+      0% { transform: rotate(0deg) translate3d(0, 0, 0); }
+      100% { transform: rotate(360deg) translate3d(0, 0, 0); }
+    }
+
     .page-header {
       text-align: center;
       margin-bottom: 2.5rem;
@@ -57,6 +94,13 @@
       font-size: 0.9rem;
       color: #777;
     }
+
+    @media (max-width: 768px) {
+      body::before,
+      body::after {
+        opacity: 0.4;
+      }
+    }
   </style>
 </head>
 <body>
@@ -98,6 +142,30 @@
           <h3>Accessible Tech for BLV Students</h3>
           <p>Investigating inclusive learning technologies and system-level barriers in resource-constrained environments.</p>
           <div class="project-tags">Accessibility · Education · Policy</div>
+        </div>
+
+        <div class="project-card">
+          <h3>Conversational Breakdowns in Smart Glasses Use</h3>
+          <p>Understanding social friction points when AI assistants are embedded in everyday face-to-face interaction.</p>
+          <div class="project-tags">Social Computing · Wearables</div>
+        </div>
+
+        <div class="project-card">
+          <h3>Dynamic VR Sports Broadcasting</h3>
+          <p>Exploring moving camera shots in VR sports viewing to improve immersion without increasing discomfort.</p>
+          <div class="project-tags">VR · Media · Experience Design</div>
+        </div>
+
+        <div class="project-card">
+          <h3>Tangible Systems for Social Attention</h3>
+          <p>Designing embodied play systems to support social attention and collaboration in early education settings.</p>
+          <div class="project-tags">Tangible Interaction · Learning</div>
+        </div>
+
+        <div class="project-card">
+          <h3>Natural Soundscapes Library</h3>
+          <p>Building a categorized library of natural sounds for restoration and affective interaction research.</p>
+          <div class="project-tags">HCI · Sound · Wellbeing</div>
         </div>
       </section>
     </div>
