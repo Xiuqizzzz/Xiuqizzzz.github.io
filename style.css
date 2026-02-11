@@ -94,15 +94,14 @@ img {
 .news-toggle:hover { background: #f3f3f3; }
 
 .news-scroll {
-  overflow: hidden;           /* 折叠时隐藏 */
+  overflow: auto;             /* 默认即可滚动 */
   transition: max-height .25s ease;
-  max-height: 160px;          /* 折叠高度 */
+  max-height: 160px;
   padding-right: 4px;
 }
 
 .news-scroll[data-expanded="true"] {
-  overflow: auto;             /* 展开后可滚动 */
-  max-height: 420px;          /* 展开最大高度，可自行调 */
+  max-height: 420px;
 }
 
 /* 可选：滚动条样式（与方案A一致） */
