@@ -7,161 +7,148 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
   <style>
-    body {
-      position: relative;
-      overflow-x: hidden;
-      background: radial-gradient(1200px 600px at 10% -10%, rgba(102, 126, 234, 0.18), transparent 60%),
-                  radial-gradient(900px 500px at 90% 10%, rgba(118, 75, 162, 0.16), transparent 55%),
-                  linear-gradient(180deg, #f7f8fb 0%, #f1f3f8 100%);
+    .projects-page {
+      max-width: 980px;
+      margin: 0 auto;
     }
 
-    body::before,
-    body::after {
-      content: "";
-      position: fixed;
-      inset: -20% -10%;
-      z-index: 0;
-      pointer-events: none;
-      background: conic-gradient(from 180deg at 50% 50%, rgba(102, 126, 234, 0.08), rgba(118, 75, 162, 0.06), rgba(255, 255, 255, 0.0));
-      filter: blur(40px);
-      animation: swirl 28s linear infinite;
-      opacity: 0.9;
+    .projects-hero {
+      background: linear-gradient(135deg, #f0f7ff 0%, #ffffff 62%);
+      border: 1px solid #e4eefc;
+      border-radius: 16px;
+      padding: 1.8rem;
+      box-shadow: 0 8px 24px rgba(0, 123, 255, 0.08);
+      margin-bottom: 2rem;
     }
 
-    body::after {
-      animation: swirl 40s linear infinite reverse;
-      opacity: 0.6;
+    .projects-hero h1 {
+      margin: 0 0 0.5rem 0;
+      font-size: 2rem;
+      color: #1f2a44;
     }
 
-    .layout,
-    .topnav {
-      position: relative;
-      z-index: 1;
+    .projects-hero p {
+      margin: 0;
+      color: #4e5b74;
+      max-width: 760px;
+      line-height: 1.6;
     }
 
-    @keyframes swirl {
-      0% { transform: rotate(0deg) translate3d(0, 0, 0); }
-      100% { transform: rotate(360deg) translate3d(0, 0, 0); }
+    .filter-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.65rem;
+      margin-bottom: 1.5rem;
     }
 
-    .page-header {
-      text-align: center;
-      margin-bottom: 2.5rem;
+    .filter-btn {
+      padding: 0.48rem 0.95rem;
+      border-radius: 999px;
+      border: 1px solid #d4dfef;
+      background: #fff;
+      color: #3d4a63;
+      font-size: 0.92rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
     }
 
-    .page-header h1 {
-      font-size: 2.5rem;
-      color: #333;
-      margin-bottom: 0.5rem;
+    .filter-btn:hover {
+      border-color: #96b9e9;
+      color: #0a66c2;
+      transform: translateY(-1px);
     }
 
-    .page-header p {
-      color: #666;
-      font-size: 1.05rem;
+    .filter-btn.active {
+      background: #007bff;
+      border-color: #007bff;
+      color: #fff;
     }
 
     .project-list {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.5rem;
+      gap: 1.2rem;
     }
 
     .project-card {
-      background: white;
-      border-radius: 12px;
-      padding: 1.5rem;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.08);
+      background: #fff;
+      border-radius: 14px;
+      border: 1px solid #e8edf5;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
       transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
 
     .project-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 8px 14px rgba(0, 0, 0, 0.12);
-    }
-
-    .project-card h3 {
-      margin: 0 0 0.5rem 0;
-      color: #333;
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.09);
     }
 
     .project-image {
       width: 100%;
       height: 180px;
       object-fit: cover;
-      border-radius: 10px;
-      margin-bottom: 1rem;
+      border-bottom: 1px solid #edf1f7;
+    }
+
+    .project-body {
+      padding: 1rem 1rem 1.1rem;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
+    .project-card h3 {
+      margin: 0 0 0.45rem 0;
+      color: #25314b;
+      font-size: 1.08rem;
+      line-height: 1.35;
     }
 
     .project-card p {
-      color: #666;
-      line-height: 1.5;
-      margin: 0 0 1rem 0;
+      margin: 0 0 0.8rem 0;
+      color: #5c6b85;
+      line-height: 1.55;
+      font-size: 0.95rem;
+      flex: 1;
     }
 
-    .project-actions {
-      display: flex;
-      gap: 0.75rem;
-      align-items: center;
-      margin-top: 0.5rem;
+    .project-tags {
+      font-size: 0.84rem;
+      color: #4a89d9;
+      margin-bottom: 0.7rem;
+      font-weight: 500;
     }
 
     .project-link {
       display: inline-flex;
       align-items: center;
-      gap: 0.4rem;
-      padding: 0.45rem 0.9rem;
-      background: #f0f2f7;
-      color: #333;
-      text-decoration: none;
-      border-radius: 999px;
+      justify-content: center;
+      width: fit-content;
+      padding: 0.45rem 0.85rem;
+      border-radius: 8px;
       font-size: 0.9rem;
+      color: #fff;
+      background: #007bff;
+      text-decoration: none;
       transition: background 0.2s ease, transform 0.2s ease;
     }
 
     .project-link:hover {
-      background: #e6e9f2;
+      background: #0062cc;
+      text-decoration: none;
       transform: translateY(-1px);
-    }
-
-    .project-tags {
-      font-size: 0.9rem;
-      color: #777;
-    }
-
-    .filter-bar {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.75rem;
-      justify-content: center;
-      margin-bottom: 2rem;
-    }
-
-    .filter-btn {
-      padding: 0.5rem 1rem;
-      border-radius: 999px;
-      border: 1px solid #d6dbe6;
-      background: white;
-      color: #333;
-      font-size: 0.95rem;
-      cursor: pointer;
-      transition: all 0.2s ease;
-    }
-
-    .filter-btn:hover {
-      transform: translateY(-1px);
-      border-color: #bfc7d9;
-    }
-
-    .filter-btn.active {
-      background: #333;
-      color: white;
-      border-color: #333;
     }
 
     @media (max-width: 768px) {
-      body::before,
-      body::after {
-        opacity: 0.4;
+      .projects-hero {
+        padding: 1.2rem;
+      }
+
+      .projects-hero h1 {
+        font-size: 1.65rem;
       }
     }
   </style>
@@ -182,11 +169,14 @@
   </nav>
 
   <div class="layout">
-    <div class="main-content">
-      <div class="page-header">
-        <h1>Projects</h1>
-        <p>Selected research, design, and systems work.</p>
-      </div>
+    <div class="main-content projects-page">
+      <header class="projects-hero">
+        <h1>Selected Projects</h1>
+        <p>
+          A focused view of my work across XR, AI-assisted learning, accessibility,
+          and interaction design.
+        </p>
+      </header>
 
       <div class="filter-bar" role="tablist" aria-label="Project categories">
         <button class="filter-btn active" data-filter="all" type="button">All</button>
@@ -194,61 +184,66 @@
         <button class="filter-btn" data-filter="vr" type="button">VR</button>
         <button class="filter-btn" data-filter="ar" type="button">AR</button>
         <button class="filter-btn" data-filter="collaboration" type="button">Collaboration</button>
-        <button class="filter-btn" data-filter="other" type="button">Other Projects</button>
+        <button class="filter-btn" data-filter="other" type="button">Other</button>
       </div>
 
       <section class="project-list">
-
-        <div class="project-card" data-category="education, VR">
+        <article class="project-card" data-category="education,vr">
           <img src="assets/chi2026_VAPS.jpg" class="project-image" alt="VR simulation for clinical communication" />
-          <h3>VR Simulation for Clinical Communication</h3>
-          <p>Immersive, adaptive training environments with LLM-driven conversational agents for healthcare education.</p>
-          <div class="project-tags">VR · Education · LLMs</div>
-          <div class="project-actions">
-            <a class="project-link" href="https://drive.google.com/file/d/13jH60iWj-oin5TphAM9k-qJbf1bRKAOm/view?usp=drive_link" target="_blank" rel="noopener noreferrer">PDF</a>
+          <div class="project-body">
+            <h3>VR Simulation for Clinical Communication</h3>
+            <p>Immersive, adaptive training environments with LLM-driven conversational agents for healthcare education.</p>
+            <div class="project-tags">VR · Education · LLMs</div>
+            <a class="project-link" href="https://drive.google.com/file/d/13jH60iWj-oin5TphAM9k-qJbf1bRKAOm/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Read PDF</a>
           </div>
-        </div>
+        </article>
 
-        <div class="project-card" data-category="education">
+        <article class="project-card" data-category="education,other">
           <img src="assets/ijhci2024_blindcollege.avif" class="project-image" alt="Accessible technology for blind and low vision students" />
-          <h3>Accessible Tech for BLV Students</h3>
-          <p>Investigating inclusive learning technologies and system-level barriers in resource-constrained environments.</p>
-          <div class="project-tags">Accessibility · Education · Policy</div>
-          <div class="project-actions">
-            <a class="project-link" href="https://drive.google.com/file/d/1rGt4XQqhbJiYx7yEVBXPU0vJEmimjbrt/view?usp=drive_link" target="_blank" rel="noopener noreferrer">PDF</a>
+          <div class="project-body">
+            <h3>Accessible Tech for BLV Students</h3>
+            <p>Investigating inclusive learning technologies and system-level barriers in resource-constrained environments.</p>
+            <div class="project-tags">Accessibility · Education · Policy</div>
+            <a class="project-link" href="https://drive.google.com/file/d/1rGt4XQqhbJiYx7yEVBXPU0vJEmimjbrt/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Read PDF</a>
           </div>
-        </div>
+        </article>
 
-        <div class="project-card" data-category="ar">
+        <article class="project-card" data-category="ar,collaboration">
           <img src="assets/Figure_Visual Breakdown.png" class="project-image" alt="Conversational successes and breakdowns figure" />
-          <h3>Conversational Breakdowns in Smart Glasses Use</h3>
-          <p>Understanding social friction points when AI assistants are embedded in everyday face-to-face interaction.</p>
-          <div class="project-tags">Social Computing · Wearables</div>
-          <div class="project-actions">
-            <a class="project-link" href="https://drive.google.com/file/d/1pbJX971UbFy3mmdKNa1pnDvMnRsuP3Bb/view?usp=drive_link" target="_blank" rel="noopener noreferrer">PDF</a>
+          <div class="project-body">
+            <h3>Conversational Breakdowns in Smart Glasses Use</h3>
+            <p>Understanding social friction points when AI assistants are embedded in everyday face-to-face interaction.</p>
+            <div class="project-tags">AR · Social Computing · Wearables</div>
+            <a class="project-link" href="https://drive.google.com/file/d/1pbJX971UbFy3mmdKNa1pnDvMnRsuP3Bb/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Read PDF</a>
           </div>
-        </div>
+        </article>
 
-        <div class="project-card" data-category="vr">
+        <article class="project-card" data-category="vr,other">
           <img src="assets/ismar2023_moveit.avif" class="project-image" alt="Moving VR shots in sports broadcasting" />
-          <h3>Dynamic VR Sports Broadcasting</h3>
-          <p>Exploring moving camera shots in VR sports viewing to improve immersion without increasing discomfort.</p>
-          <div class="project-tags">VR · Media · Experience Design</div>
-        </div>
+          <div class="project-body">
+            <h3>Dynamic VR Sports Broadcasting</h3>
+            <p>Exploring moving camera shots in VR sports viewing to improve immersion without increasing discomfort.</p>
+            <div class="project-tags">VR · Media · Experience Design</div>
+          </div>
+        </article>
 
-        <div class="project-card" data-category="other">
+        <article class="project-card" data-category="collaboration,other">
           <img src="assets/idc2023_cospace.avif" class="project-image" alt="Tangible system supporting social attention" />
-          <h3>Tangible Systems for Social Attention</h3>
-          <p>Designing embodied play systems to support social attention and collaboration in early education settings.</p>
-          <div class="project-tags">Tangible Interaction · Learning</div>
-        </div>
+          <div class="project-body">
+            <h3>Tangible Systems for Social Attention</h3>
+            <p>Designing embodied play systems to support social attention and collaboration in early education settings.</p>
+            <div class="project-tags">Tangible Interaction · Collaboration · Learning</div>
+          </div>
+        </article>
 
-        <div class="project-card" data-category="other">
+        <article class="project-card" data-category="other">
           <img src="assets/hcii2022_sounds.avif" class="project-image" alt="Natural soundscape library" />
-          <h3>Natural Soundscapes Library</h3>
-          <p>Building a categorized library of natural sounds for restoration and affective interaction research.</p>
-          <div class="project-tags">HCI · Sound · Wellbeing</div>
-        </div>
+          <div class="project-body">
+            <h3>Natural Soundscapes Library</h3>
+            <p>Building a categorized library of natural sounds for restoration and affective interaction research.</p>
+            <div class="project-tags">HCI · Sound · Wellbeing</div>
+          </div>
+        </article>
       </section>
     </div>
   </div>
@@ -265,9 +260,13 @@
         button.classList.add("active");
 
         projectCards.forEach((card) => {
-          const category = card.getAttribute("data-category");
-          const shouldShow = filter === "all" || filter === category;
-          card.style.display = shouldShow ? "block" : "none";
+          const categories = card
+            .getAttribute("data-category")
+            .split(",")
+            .map((item) => item.trim().toLowerCase());
+
+          const shouldShow = filter === "all" || categories.includes(filter);
+          card.style.display = shouldShow ? "flex" : "none";
         });
       });
     });
