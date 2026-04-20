@@ -202,6 +202,33 @@ img {
   margin-bottom: 40px;
 }
 
+.collab-callout {
+  margin: 18px 0 30px;
+  padding: 16px 18px;
+  background: linear-gradient(135deg, #eef6ff 0%, #f8fbff 100%);
+  border-left: 4px solid #007BFF;
+  border-radius: 10px;
+  box-shadow: 0 4px 14px rgba(0, 123, 255, 0.08);
+}
+
+.collab-badge {
+  display: inline-block;
+  margin-bottom: 8px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background-color: rgba(0, 123, 255, 0.12);
+  color: #005bb5;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.collab-callout p {
+  margin: 0;
+  color: #1f2d3d;
+}
+
 /* === 研究兴趣部分样式 - 修改为垂直布局 === */
 .research-container {
   display: flex;
